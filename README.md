@@ -1,4 +1,6 @@
-This repo shows a demo of how to use DALI(v0.16.0) to read images and label from the CSV config file. `./images` folder provide five images as a small dataset.
+# PyTorch DataLoader with DALI and CSV
+This repo shows a demo of how to use DALI(v0.16.0) to read images and label from the CSV config file.
+`./images` folder provide five images as a small dataset.
 
 *Allow me to complain first.*
 
@@ -63,6 +65,7 @@ I highly recommend `DALIGenericIterator(..., last_batch_padded=True/False, fill_
 Because I made a few changes to the original structure, it most likely does **not support** Python 2.x. You can also easily merge the two files and use the original structure.
 
 With Intel(R) Xeon(R) CPU E5-2650 v4, 1 TITAN Xp GPU, I compared the speed of these three situations using the [KonIQ-10K](http://database.mmsp-kn.de/koniq-10k-database.html) dataset which has 10,073 images.
+
 |                     | 4 threads            | 8 threads            | 16 threads           |
 | ------------------- | -------------------- | -------------------- | -------------------- |
 | PyTorch dataloader  | 165.55s(62.66imgs/s) | 96.07s(107.97imgs/s) | 53.75s(192.99imgs/s) |
